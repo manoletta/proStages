@@ -7,6 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 //use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Stage;
 use App\Entity\Formation;
+use App\Entity\Entreprise;
 
 
 class ProStagesController extends AbstractController
@@ -37,7 +38,14 @@ class ProStagesController extends AbstractController
       */
       public function indexEntreprises()
       {
-        return $this->render('pro_stages/indexEntreprises.html.twig');
+        //Récupérer le repository de l'entité stage
+        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
+
+        //Récupérer les stages se trouvant dans la base de données
+        $entreprises = $repositoryEntreprise->findAll();
+
+        //Envoyer les stages à la vue chargé de les afficher
+        return $this->render('pro_stages/indexEntreprises.html.twig', ['entreprises'=>$entreprises]);
         /*return new Response(
           '<html>
             <body>
