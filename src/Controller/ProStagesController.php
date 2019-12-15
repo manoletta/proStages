@@ -38,13 +38,13 @@ class ProStagesController extends AbstractController
       */
       public function indexEntreprises()
       {
-        //Récupérer le repository de l'entité stage
+        //Récupérer le repository de l'entité entreprise
         $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
 
-        //Récupérer les stages se trouvant dans la base de données
+        //Récupérer les entreprises se trouvant dans la base de données
         $entreprises = $repositoryEntreprise->findAll();
 
-        //Envoyer les stages à la vue chargé de les afficher
+        //Envoyer les entreprises à la vue chargé de les afficher
         return $this->render('pro_stages/indexEntreprises.html.twig', ['entreprises'=>$entreprises]);
         /*return new Response(
           '<html>
@@ -80,7 +80,16 @@ class ProStagesController extends AbstractController
       */
       public function indexStages($id)
       {
-        return $this->render('pro_stages/indexStages.html.twig', ['idStage' => $id]);
+
+        //Récupérer le repository de l'entité stage
+        $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
+
+        //Récupérer les stages se trouvant dans la base de données
+        $stage = $repositoryStage->findAll();
+
+        //Envoyer les stages à la vue chargé de les afficher
+        return $this->render('pro_stages/indexStages.html.twig', ['idStage' => $id, 'stage'=>$stage]);
+
         /*return new Response(
           '<html>
             <body>
