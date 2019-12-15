@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 //use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Stage;
+use App\Entity\Formation;
 
 
 class ProStagesController extends AbstractController
@@ -50,7 +51,14 @@ class ProStagesController extends AbstractController
       */
       public function indexFormations()
       {
-        return $this->render('pro_stages/indexFormations.html.twig');
+        //Récupérer le repository de l'entité formation
+        $repositoryFormation = $this->getDoctrine()->getRepository(Formation::class);
+
+        //Récupérer les formations se trouvant dans la base de données
+        $formations = $repositoryFormation->findAll();
+
+        //Envoyer les formations à la vue chargé de les afficher
+        return $this->render('pro_stages/indexFormations.html.twig', ['formations'=>$formations]);
         /*return new Response(
           '<html>
             <body>
