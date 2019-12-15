@@ -35,17 +35,35 @@
 </div>
 </div>
 {% endblock %}
-{% block body %}{% endblock %}
-<!--Footer-->
-{% block footer %}
+
+<!--Zone de tri-->
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <p>Projet élaboré avec <a href="https://symfony.com" target="blank">Symfony</a> et <a href="https://getbootstrap.com" target="blank">BootStrap</a> dans le cadre du module M3104</p>
+      <div class="card" style="width: 16rem;">
+        <div class="card-header">
+          Afficher les stages par :
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><a href="{{path('proStages_entreprises')}}">Entreprises</a></li>
+          <li class="list-group-item"><a href="{{path('proStages_formations')}}">Formations</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-{% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+
+    {% block body %}{% endblock %}
+    <!--Footer-->
+    {% block footer %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Projet élaboré avec <a href="https://symfony.com" target="blank">Symfony</a> et <a href="https://getbootstrap.com" target="blank">BootStrap</a> dans le cadre du module M3104</p>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block javascripts %}{% endblock %}
+  </body>
+  </html>
