@@ -4,4 +4,11 @@
 
 {% block body %}
 <h1>Cette page affichera le descriptif du stage ayant pour identifiant {{idStage}} .</h1>
+
+<h4>Titre : {{stage.getTitre()}}</h4> 
+
+<h4>Description des missions : {{stage.getDescription()}}</h4>
+
+<h4>Email de contact : {{stage.getEmail()}}</h4>
+
 {% endblock %}
