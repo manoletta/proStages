@@ -85,7 +85,7 @@ class ProStagesController extends AbstractController
         $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
 
         //Récupérer les stages se trouvant dans la base de données
-        $stage = $repositoryStage->findAll();
+        $stage = $repositoryStage->find($id);
 
         //Envoyer les stages à la vue chargé de les afficher
         return $this->render('pro_stages/indexStages.html.twig', ['idStage' => $id, 'stage'=>$stage]);
