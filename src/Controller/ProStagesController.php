@@ -88,7 +88,7 @@ class ProStagesController extends AbstractController
         $stage = $repositoryStage->find($id);
 
         //Envoyer les stages à la vue chargé de les afficher
-        return $this->render('pro_stages/indexStages.html.twig', ['idStage' => $id, 'stage'=>$stage]);
+        return $this->render('pro_stages/indexStages.html.twig', ['stage'=>$stage]);
 
         /*return new Response(
           '<html>

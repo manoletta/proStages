@@ -3,15 +3,9 @@
 {% block title %}Stages{% endblock %}
 
 {% block body %}
-<h1>Cette page affichera le descriptif du stage ayant pour identifiant {{idStage}} .</h1>
-
-<h4>Titre : </h4>
-<p>{{stage.titre}}</p>
-
-<h4>Description des missions : </h4>
-<p>{{stage.description}}</p>
-
-<h4>Email de contact : </h4>
-<p>{{stage.email}}</p>
-
+<ul class="list-group">
+  <li class="list-group-item"><strong>Titre : </strong>{{stage.titre}}</li>
+  <li class="list-group-item"><strong>Description des missions : </strong>{{stage.description}}</li>
+  <li class="list-group-item"><strong>Email : </strong>{{stage.email}}</li>
+</ul>
 {% endblock %}

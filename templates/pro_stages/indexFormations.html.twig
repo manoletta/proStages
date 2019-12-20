@@ -3,25 +3,18 @@
 {% block title %}Formations{% endblock %}
 
 {% block body %}
-<p>Vous retrouverez au sein de ProStages des propositions de satges pour les formations suivantes.</p>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Formations</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for formation in formations %}
-          <tr>
-            <td>{{formation.nomCourt}} - {{formation.nomLong}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Formations</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for formation in formations %}
+    <tr>
+      <td>{{formation.nomCourt}} - {{formation.nomLong}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

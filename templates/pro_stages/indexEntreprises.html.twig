@@ -3,26 +3,18 @@
 {% block title %}Entreprises{% endblock %}
 
 {% block body %}
-<h1>Cette page affichera la liste des entreprises proposant un stage.</h1>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Entreprises</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for entreprise in entreprises %}
-          <tr>
-            <td>{{entreprise.nom}}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
+<table class="table">
+  <thead>
+    <tr>
+      <th>Entreprises</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entreprise in entreprises %}
+    <tr>
+      <td>{{entreprise.nom}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
